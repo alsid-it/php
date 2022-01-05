@@ -27,10 +27,6 @@ require_once ('config.php');
                         <option value="2">Оптовая цена</option>
                     </select>
                     <span class="shead">от</span>
-                    <!--<div class="price-range-block">-->    
-    
-	    
-			<!--<div id="slider-range" class="price-filter-range" name="rangeInput"></div>-->
 
 			<input type="number" min=0 max="999998" oninput="validity.valid||(value='0');" id="min_price" class="price-range-field" />
                         <span class="shead"> до </span>
@@ -43,10 +39,6 @@ require_once ('config.php');
                         <input type="number" min=0 max="999999" oninput="validity.valid||(value='0');"  id="sn" class="price-range-field" />
                         <span class="shead"> штук. </span>
                         <button id="filter">ПОКАЗАТЬ ТОВАРЫ</button>
-<!--			<button class="price-range-search" id="price-range-submit">ПОКАЗАТЬ ТОВАРЫ</button>-->
-						
-
-                    <!--</div>-->
                     
                 </div>
                 <div class="col-sm-9">
@@ -179,8 +171,6 @@ require_once ('config.php');
         </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
-
-    <script type="text/javascript" src="js/script.js"></script>
     
     <script type="text/javascript">
         $(document).ready(function(){
@@ -217,13 +207,11 @@ require_once ('config.php');
                 
                 $("#fetchval").on('change',function(){
                     var way = $(this).val();
-                    // alert(way);
                     // filterProducts();
                 })
                 
                 $("#way2").on('change',function(){
                     var way2 = $(this).val();
-                    //alert(way2);
                     // filterProducts();
                 })
                 
@@ -235,30 +223,6 @@ require_once ('config.php');
                     var sn = $(this).val();
                     // filterProducts();
                 });
-                
-            
-            $("#slider-range").slider({
-		range: true,
-		orientation: "horizontal",
-		min: 0,
-		max: 10000,
-		values: [0, 10000],
-		step: 100,
-
-		slide: function (event, ui) {
-		  if (ui.values[0] == ui.values[1]) {
-			  return false;
-		  }
-		  
-		  $("#min_price").val(ui.values[0]);
-		  $("#max_price").val(ui.values[1]);
-                  
-                  filterProducts();
-	  }
-	  });
-          
-          $("#min_price").val($("#slider-range").slider("values", 0));
-	  $("#max_price").val($("#slider-range").slider("values", 1));
           
         });
     </script>

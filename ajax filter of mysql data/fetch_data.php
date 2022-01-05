@@ -3,12 +3,6 @@
 require_once ('config.php');
 error_reporting(0);
 
-//echo '<pre>';
-//print_r($_POST);
-//echo '</pre>';
-//echo '<br>';
-//echo '<br>';
-
 if(isset($_POST['min_price']) && isset($_POST['max_price'])){
     
     $min_price = $_POST['min_price'];
